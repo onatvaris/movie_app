@@ -12,5 +12,5 @@ app.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
 
 app.listen(5000, () => {
   console.log("starting 5000 port");
-  console.log("http://localhost:5000/grapql");
+  console.log("http://localhost:5000/graphql");
 });

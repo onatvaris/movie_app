@@ -1,29 +1,38 @@
-import { useQuery, gql } from "@apollo/client";
-import React, { useState } from "react";
-const getMoviesQuery = gql`
-  {
-    directors {
-      id
-      name
-      movies {
-        title
-      }
-    }
-  }
-`;
-function MovieList() {
-  const [count, setCount] = useState(0);
-  const { loading, error, data } = useQuery(getMoviesQuery);
+import { useQuery } from "@apollo/client";
+import React from "react";
+import { getMoviesQuery } from "../queries/Queries";
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
-  console.log(data);
+function MovieList() {
+  const { loading, error, data } = useQuery(getMoviesQuery);
+  if (loading) {
+    return <h1>loading...</h1>;
+  }
+  if (error) {
+    return <h1>error</h1>;
+  }
+
+  const getMovies = data.movies.map((v, i, a) => {
+    return (
+      <ul className="movies" key={i}>
+        <li>
+          <h4>{v.title}</h4>
+        </li>
+        <p>{v.description}</p>
+        <p>{v.year}</p>
+        <ul className="movies-director">
+          <li>
+            <h4>Director</h4>
+          </li>
+          <p>{v.director.name}</p>
+        </ul>
+      </ul>
+    );
+  });
 
   return (
-    <div>
-      <ul className="movie-list">
-        <li>Lorem İpsum</li>
-      </ul>
+    <div className="movies-list">
+      <h1>Movies</h1>
+      {getMovies}
     </div>
   );
 }
