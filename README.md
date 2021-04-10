@@ -12,4 +12,4 @@ MongoDB de oluşturulmuş DataBase ile yönetmen ve film ekleme işlemleri ve y�
 <img width="1399" alt="Ekran Resmi 2021-04-10 16 51 36" src="https://user-images.githubusercontent.com/51972191/114272939-d8b05d80-9a20-11eb-844a-5a67ec0f042c.png">
 
 
-<img width="1181" alt="Ekran Resmi 2021-04-10 16 51 56" src="https://user-images.githubusercontent.com/51972191/114272943-dbab4e00-9a20-11eb-89a7-304246254495.png">
+<img width="945" alt="Ekran Resmi 2021-04-10 17 23 35" src="https://user-images.githubusercontent.com/51972191/114273119-976c7d80-9a21-11eb-9af8-c324da9837fd.png">
